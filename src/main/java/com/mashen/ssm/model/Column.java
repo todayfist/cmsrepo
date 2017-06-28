@@ -1,19 +1,31 @@
 package com.mashen.ssm.model;
 
+import java.sql.Timestamp;
+
 public class Column {
-	private String columnname;
-	private String creationtime;
-	public String getColumnname() {
-		return columnname;
+	private Integer id;
+	private String columnName;
+	private Timestamp creationtime;
+	public Integer getId() {
+		return id;
 	}
-	public void setColumnname(String columnname) {
-		this.columnname = columnname;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getCreationtime() {
+	
+	public String getColumnName() {
+		return columnName;
+	}
+	public void setColumnName(String columnName) {
+		this.columnName = columnName;
+	}
+	public Timestamp getCreationtime() {
 		return creationtime;
 	}
-	public void setCreationtime(String creationtime) {
+	public void setCreationtime(Timestamp creationtime) {
 		this.creationtime = creationtime;
 	}
+	
+	
 	
 }
