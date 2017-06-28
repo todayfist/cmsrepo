@@ -11,4 +11,13 @@ public class UserAction {
 		System.out.println("跳转成功!"); 
 		return "success";
 	}
+	/*
+	 * @auther yaoming
+	 * logincheck
+	*/
+	@RequestMapping("/userlogin")
+	public String UserLogin(){
+		System.out.println("跳转成功!"); 
+		return "Bootstrap/todayfirst";
+	}
 }

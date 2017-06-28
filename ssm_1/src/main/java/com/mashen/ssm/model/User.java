@@ -1,25 +1,38 @@
 package com.mashen.ssm.model;
 
 public class User {
-	private Integer userId;
-	private String userName;
+	private Integer id;
+	private String account;
+	private String password;
+	private String name;
 	
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + "]";
+		return "User [id=" + id + ", account=" + account + ", password=" + password + ", name=" + name + "]";
 	}
-	public Integer getUserId() {
-		return userId;
+	public Integer getId() {
+		return id;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public String getAccount() {
+		return account;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setAccount(String account) {
+		this.account = account;
 	}
-
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 }

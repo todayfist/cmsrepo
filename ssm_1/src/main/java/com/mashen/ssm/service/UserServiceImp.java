@@ -16,8 +16,6 @@ public class UserServiceImp implements IUserService {
 	@Override
 	public void add(){
 		User user = new User();
-		user.setUserId(3);
-		user.setUserName("admin");
 		userDaoImp.add(user);
 	}
 

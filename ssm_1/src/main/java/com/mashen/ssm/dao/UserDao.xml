@@ -6,5 +6,7 @@
 		insert into user(userId,userName) values(#{userId},#{userName})
 	</insert>
 
-
+	<select id="login" parameterType="com.mashen.ssm.model.User" resultType="com.mashen.ssm.model.User">
+		select * from user where id = #{userId} and #{userName}
+	</select>
 </mapper>  
