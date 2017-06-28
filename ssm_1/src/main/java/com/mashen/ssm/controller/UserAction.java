@@ -19,5 +19,5 @@ public class UserAction {
 	public String UserLogin(){
 		System.out.println("跳转成功!"); 
 		return "Bootstrap/todayfirst";
-	}
+	} 
 }
