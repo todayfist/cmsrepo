@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC 
+	"-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置别名 -->
+	<typeAliases>
+		<typeAlias type="com.mashen.ssm.IUserDao" alias="IUserDao" />
+		<typeAlias type="com.mashen.ssm.UserDaoImp" alias="UserDao" />
+	</typeAliases>
+	 
+	
+	
+	<!-- 配置mappers -->
+	<mappers>
+		<mapper resource="com/mashen/ssm/dao/UserDao.xml" />
+	</mappers>
+	
+</configuration>

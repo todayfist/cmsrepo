@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.mashen.ssm.dao.IColumnDao">
+
+	<insert id="add" parameterType="com.mashen.ssm.model.Column">
+		insert into column_Type(id,columnName) values(#{id},#{columnName})
+	</insert>
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from column_Type where id=#{id}
+	</delete>
+	<update id="update" parameterType="com.mashen.ssm.model.Column">
+		update column_Type set columnName=#{columnName} where id=#{id}
+	</update>
+<!-- 修改 -->
+
+</mapper>  
