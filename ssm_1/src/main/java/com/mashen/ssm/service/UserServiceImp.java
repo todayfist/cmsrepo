@@ -12,11 +12,23 @@ import com.mashen.ssm.model.User;
 @Service(value="userServiceImp")
 public class UserServiceImp implements IUserService {
 	@Resource
-	private IUserDao userDaoImp;
+	private IUserDao userDao;
 	@Override
 	public void add(){
 		User user = new User();
-		userDaoImp.add(user);
+		userDao.add(user);
+	}
+	
+	@Override
+	public Boolean login(String account, String password){
+		User user = new User();
+		user.setAccount(account);
+		user.setPassword(password);
+		User result = userDao.login(user);
+		if(result==null)
+			return false;
+		else
+			return true;
 	}
 
 	
