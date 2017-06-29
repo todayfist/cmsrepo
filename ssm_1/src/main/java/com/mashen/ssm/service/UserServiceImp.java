@@ -20,10 +20,7 @@ public class UserServiceImp implements IUserService {
 	}
 	
 	@Override
-	public Boolean login(String account, String password){
-		User user = new User();
-		user.setAccount(account);
-		user.setPassword(password);
+	public Boolean login(User user){
 		User result = userDao.login(user);
 		if(result==null)
 			return false;

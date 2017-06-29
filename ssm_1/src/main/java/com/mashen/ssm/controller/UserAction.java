@@ -17,14 +17,18 @@ public class UserAction {
 	
 	@RequestMapping("/login3")
 	public String login(){
+		
+		//通过调用Service接口利用IOC或取与数据库连接的业务逻辑方法
+		//这个方法的功能是判断用户是否存在
+		//如果存在方法有返回值跳转到主页否则原页跳转
 		System.out.println("跳转成功!"); 
-		return "success";
+		return "todayfirst";
 	}
 	/*
 	 * @auther yaoming
 	 * logincheck
 	*/
-	@RequestMapping("/userlogin")
+	/*@RequestMapping("/userlogin")
 	public String UserLogin(@ModelAttribute User user){
 		Boolean checked = userService.login(user.getAccount(),user.getPassword());
 		if(checked)
@@ -33,5 +37,5 @@ public class UserAction {
 			return "Bootstrap/todayfirst";
 		//System.out.println("跳转成功!"); 
 		
-	} 
+	} */
 }
