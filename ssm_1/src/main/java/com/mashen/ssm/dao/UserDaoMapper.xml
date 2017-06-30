@@ -7,6 +7,6 @@
 	</insert>
 
 	<select id="login" parameterType="com.mashen.ssm.model.User" resultType="com.mashen.ssm.model.User">
-		select * from user where id = #{userId} and #{userName}
+		select * from user where account = #{account} and password = #{password}
 	</select>
 </mapper>  

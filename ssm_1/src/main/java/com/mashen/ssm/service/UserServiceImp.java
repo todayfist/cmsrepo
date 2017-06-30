@@ -5,14 +5,14 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mashen.ssm.dao.IUserDao;
+import com.mashen.ssm.dao.IfcUserDao;
 import com.mashen.ssm.model.User;
 
 @Transactional(rollbackFor=java.lang.Exception.class)
 @Service(value="userServiceImp")
-public class UserServiceImp implements IUserService {
+public class UserServiceImp implements IfcUserService {
 	@Resource
-	private IUserDao userDao;
+	private IfcUserDao userDao;
 	@Override
 	public void add(){
 		User user = new User();

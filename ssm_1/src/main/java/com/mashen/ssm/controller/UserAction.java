@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mashen.ssm.model.User;
-import com.mashen.ssm.service.IUserService;
+import com.mashen.ssm.service.IfcUserService;
 
 @Controller
 @RequestMapping(value="/user3")
 public class UserAction {
 	@Resource
-	private IUserService userService;
+	private IfcUserService userService;
 	
 	@RequestMapping("/login3")
 	public String login(){
