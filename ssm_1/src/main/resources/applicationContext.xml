@@ -10,14 +10,14 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">  
 	
 	<!-- 负责扫描带有注解的组件，并注册在spring容器中 -->
-	<context:component-scan base-package="com.mashen.ssm">
+	<context:component-scan base-package="com.mashen.ssm.article">
 	</context:component-scan>
 
     <!-- 数据源 使用c3p0连接池技术，帮我们加载驱动，建立连接，可通过这对象获取连接-->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<!-- 基本配置 -->
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test" />
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/test" />
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
         <!-- 其他配置 -->
@@ -38,7 +38,7 @@
 	</bean>
     
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="com.mashen.ssm.dao" />  
+        <property name="basePackage" value="com.mashen.ssm.article.dao" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
     </bean> 
     
@@ -47,7 +47,7 @@
         <!-- <property name="configLocation" value="classpath:mybatis-config.xml"/> -->
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->  
-        <property name="mapperLocations" value="classpath:com/mashen/ssm/dao/*.xml"></property>  
+        <property name="mapperLocations" value="classpath:com/mashen/ssm/article/dao/*.xml"></property>  
     </bean> 
     
     <!-- 配置事务管理器 -->
