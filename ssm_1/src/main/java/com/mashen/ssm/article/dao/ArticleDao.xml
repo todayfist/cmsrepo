@@ -2,11 +2,7 @@
  <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.mashen.ssm.article.dao.IArticleDao">
-	<cache>
-		<property name="eviction" value="FIFO"/>
-		<property name="flushInterval" value="60000"/>
-		<property name="size" value="512"/>
-	</cache>
+	
 	<!-- 结果集的映射，将数据库中的字段映射到Model对象中 -->
 	<resultMap id="ArticleResultMap" type="com.mashen.ssm.article.model.Article">
 		<result property="id" column="ID"></result>
@@ -32,7 +28,7 @@
 		delete from article where id = #{id}
 	</delete>
 	<update id="update" parameterType="com.mashen.ssm.article.model.Article">
-		update article set id=#{id}, categoryid=#{categoryid},headlineid=#{headlineid},viewcount=#{viewcount},headline=#{headline},content=#{content},headname=#{headname},thumb=#{thumb},headimg=#{headimg},creationtime=#{creationtime}
+		update article set categoryid=#{categoryid},headlineid=#{headlineid},viewcount=#{viewcount},headline=#{headline},content=#{content},headname=#{headname},thumb=#{thumb},headimg=#{headimg},creationtime=#{creationtime} where id =#{id}
 	</update>
 	<select id="selectbyid" parameterType="java.lang.Integer" resultMap="ArticleResultMap">
 		select * from article where id = #{id}
