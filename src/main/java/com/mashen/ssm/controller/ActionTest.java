@@ -9,6 +9,6 @@ public class ActionTest {
 	@RequestMapping("/test")
 	public String test(){
 		System.out.println("hello");
-		return "todayfirst";
+		return "/today/todayfirst.jsp";
 	}
 }

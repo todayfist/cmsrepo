@@ -23,7 +23,7 @@ public class SpringTest{
     }
     @Test
     public void testColumnAdd(){
-    	columnServiceImp.add();
+    	columnServiceImp.add(null);
     }
     @Test
     public void testColumnDelete(){
