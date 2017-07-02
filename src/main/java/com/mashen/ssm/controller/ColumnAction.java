@@ -14,7 +14,7 @@ public class ColumnAction {
 	private IColumnDao columnDao;
 	@RequestMapping("/columnList")
 	public String add(HttpServletRequest request){
-		request.setAttribute("columnList", columnDao.add(column););
+//		request.setAttribute("columnList", columnDao.add(column));
 		System.out.println("hello");
 		return "todayfirst";
 	}

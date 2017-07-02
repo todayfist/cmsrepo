@@ -9,45 +9,31 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <!--(一) 配置DispatchcerServlet -->
-   <servlet>
-        <servlet-name>springDispatcherServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- 配置Spring mvc下的配置文件的位置和名称 -->
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring_mvc.xml</param-value>
-        </init-param>
-       <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-         <servlet-name>springDispatcherServlet</servlet-name>
-         <url-pattern>/</url-pattern>
-     </servlet-mapping>
-     
-     <context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/applicationContext*.xml</param-value>
-	</context-param>
-	
-   <listener>
+  <servlet>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring_mvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:/applicationContext*.xml</param-value>
+  </context-param>
+  <context-param>  
+        <param-name>webAppRootKey</param-name>   
+        <param-value>ssm_1Web.root</param-value>  
+    </context-param>
+  <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-  	<!-- <filter>
-   	<filter-name>hi</filter-name>
-    <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-   </filter>
-   <filter-mapping>
-        <filter-name>hi</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    <filter>
-        <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>struts2</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping> -->
-    
+  <listener>
+  	<listener-class>org.springframework.web.util.WebAppRootListener</listener-class>
+  </listener>
 </web-app>

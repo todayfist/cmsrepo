@@ -9,8 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mashen.ssm.dao.IColumnDao;
 import com.mashen.ssm.model.Column;
 
-
-
 @Transactional(rollbackFor=java.lang.Exception.class)
 @Service
 public class ColumnServiceImp implements IColumnService {

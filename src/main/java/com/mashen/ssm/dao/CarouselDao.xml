@@ -3,7 +3,7 @@
 <mapper namespace="com.mashen.ssm.dao.ICarouselDao">
 
 	<insert id="add" parameterType="com.mashen.ssm.model.Carousel">
-		insert into carousel (name, url, imgorder) values(#{name},#{url},#{imgorder})
+		insert into carousel (name, url, imgorder, description) values(#{name},#{url},#{imgorder},#{description})
 	</insert>
 	
 	<resultMap type="com.mashen.ssm.model.Carousel" id="carouselResultMap">
@@ -11,10 +11,18 @@
 		<result property="name" column="NAME" />
 		<result property="url" column="URL" />
 		<result property="imgorder" column="IMGORDER" />
+		<result property="description" column="DESCRIPTION" />
 	</resultMap>
 	
 	<select id="getAll" resultMap="carouselResultMap">
 		select * from carousel
 	</select>
 
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from carousel where id = #{id}
+	</delete>
+	
+	<update id="update" parameterType="com.mashen.ssm.model.Carousel">
+		update carousel set name=#{name}, url=#{url}, imgorder=#{imgorder}, description=#{description} where id=#{id}
+	</update>
 </mapper>

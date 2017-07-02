@@ -2,6 +2,14 @@ package com.mashen.ssm.model;
 
 public class Carousel {
 	private int id;
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Carousel [id=" + id + ", name=" + name + ", url=" + url + ", imgorder=" + imgorder + ", description="
+				+ description + "]";
+	}
 	private String name;
 	private String url;
 	private int imgorder;
